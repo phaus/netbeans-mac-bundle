@@ -1,22 +1,28 @@
-# Netbeans 9.0 Mac OS App Bundle
+# Netbeans 10 Mac OS App Bundle
 
-## Download the latest release
+Follow these steps to create the Mac OS app bundle for the NetBeans application.
 
 * Go to the [Netbeans Download Page](http://netbeans.apache.org/download/index.html)
-* Download the most recent release (e.g. [9.0 beta](http://netbeans.apache.org/download/nb90/nb90-beta.html))
-* Extract the Archive
-* Copy the content of `netbeans/` to `NetBeans\ 9.app/Contents/Resources/NetBeans/`
+  and download the most recent release.
 
-## Create the Icon
+* Extract the archive, this will create a `netbeans` directory.
 
-* Download the Image from [here](https://blogs.apache.org/netbeans/entry/new-apache-netbeans-incubating-logo).
-* Save it as `icons/Icon1024.png`.
-* Run `source CreateICNS.src` => the file `netbeans.icns` will be created.
-* Copy `netbeans.icns` to 
-  * `NetBeans\ 9.app/Contents/Resources/netbeans.icns`
-  * `NetBeans\ 9.app/Contents/Resources/NetBeans/nb/netbeans.icns`
-* Copy `icons/Icon1024.png` to `NetBeans\ 9.app/Contents/Resources/NetBeans/nb/netbeans.png` (optional: resize it to 64x64).
+* Copy the content of `netbeans` to the `NetBeans` resources directory:
+
+  ```
+  cp -pRH netbeans/* NetBeans\ 10.app/Contents/Resources/NetBeans/
+  ```
+
+* Copy the application icon to the root of the resources directory:
+
+  ```
+  cp -p NetBeans\ 10.app/Contents/Resources/NetBeans/nb/netbeans.icns NetBeans\ 10.app/Contents/Resources/
+  ```
+
+* Move the NetBeans 10 application to your Applications folder:
+
+  ```
+  sudo mv NetBeans\ 10.app /Applications
+  ```
 
 You are done!
-
-
